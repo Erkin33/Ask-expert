@@ -34,7 +34,7 @@ export default function Processes() {
   return (
     <div className="w-[1,198.62px] max-[850px]:flex-col max-[1030px]:px-[5%] max-[1220px]:w-full  h-[723.21px] max-[1030px]:gap-[50px] gap-[117px] flex justify-between items-center max-[850px]:my-[30px]  my-[150px] mx-auto">
       {/* Left */}
-      <div className="w-[507.89px] max-[850px]:w-full max-[850px]:mx-auto max-[1140px]:w-[400px] h-[683.21px] gap-[40px] flex flex-col justify-between items-center mb-[auto]">
+      <div className="w-[507.89px] max-[850px]:order-2 max-[850px]:mt-[30px]  max-[850px]:w-full max-[850px]:mx-auto max-[1140px]:w-[400px] h-[683.21px] gap-[40px] flex flex-col justify-between items-center mb-[auto]">
         <div className="w-[507.89px] max-[850px]:mx-auto max-[1030px]:w-full h-[323px] gap-[16px] flex flex-col items-start justify-between">
           <p className="w-[127px] max-[850px]:mx-auto h-[24px] rounded-[20px] px-[15px] gap-[10px] flex items-center justify-center bg-[#4EAF4E] font-[400] max-[1030px]:text-[14px] max-[1030px]:items-center flex justify-center text-[16px] leading-[148%] tracking-[14.5%] uppercase text-[#FFFFFF]">
             Proccess
@@ -82,7 +82,7 @@ export default function Processes() {
       </div>
 
       {/* Right */}
-      <div className="w-[573.72px] max-[850px]:w-full max-[850px]:ml-auto  max-[1220px]:w-[700px] h-[723.21px] gap-[7px] flex flex-col justify-between items-start">
+      <div className="w-[573.72px] max-[850px]:w-full max-[850px]:order-1 max-[850px]:ml-auto  max-[1220px]:w-[700px] h-[723.21px] gap-[7px] flex flex-col justify-between items-start">
         <div className="w-[444px] max-[1220px]:w-full h-[84px] gap-[8px] flex flex-col justify-between items-start">
           <p className="w-[319px] max-[1030px]:text-[14px] max-[850px]:mx-auto max-[1030px]:items-center flex justify-center h-[24px] rounded-[20px] px-[17px] gap-[10px] bg-[#FFCC4A] text-[#181818] font-[400] text-[16px] leading-[148%] tracking-[14.5%] uppercase text-center">
             Growing with our clients

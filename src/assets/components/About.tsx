@@ -7,27 +7,33 @@ import "./about.css";
 export default function AboutTeam() {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.2 });
+
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
   const [count3, setCount3] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0, transition: { duration: 0.8 } });
-      animateNumber(400, setCount1);
-      animateNumber(100, setCount2);
-      animateNumber(50, setCount3);
-    } else {
-      controls.start({ opacity: 0, y: 50 });
-    }
-  }, [inView]);
+  if (inView) {
+    controls.start({ opacity: 1, y: 0, transition: { duration: 0.8 } });
+    animateNumber(400, setCount1);
+    animateNumber(100, setCount2);
+    animateNumber(50, setCount3);
+  } else {
+    controls.start({ opacity: 0, y: 50 });
+    setCount1(0);
+    setCount2(0);
+    setCount3(0);
+  }
+}, [inView]);
+
 
   function animateNumber(
     target: number,
     setter: React.Dispatch<React.SetStateAction<number>>
   ) {
     let start = 0;
-    const duration = 2000; // 2 секунды для более плавной анимации
+    const duration = 2000;
     const increment = target / (duration / 16);
 
     const animate = () => {
@@ -114,13 +120,27 @@ export default function AboutTeam() {
         <div className="absolute bottom-0 left-0 w-[327.8px] h-[327.8px] z-10 max-[1150px]:w-[180px] max-[1150px]:h-[180px] max-[699px]:w-[120px] max-[699px]:h-[120px]">
           <img src="/Main/BackgroundPattern.svg" alt="Pattern" className="w-full h-full object-contain" />
         </div>
+
+        {/* Круг + цифра */}
         <div className="absolute bottom-[40px] left-[40px] w-[241.17px] h-[136.75px] z-[100] bg-white rounded-[16px] shadow-lg flex items-center justify-start gap-4 px-4 max-[1150px]:w-[180px] max-[1150px]:h-[100px] max-[699px]:w-[150px] max-[699px]:h-[90px] max-[699px]:gap-2">
           <div className="relative w-[60px] h-[60px] max-[699px]:w-[50px] max-[699px]:h-[50px]">
-            <svg className="rotate-[-90deg]" viewBox="0 0 36 36">
+            <svg className="rotate-[-90deg] w-full h-full" viewBox="0 0 36 36">
               <circle cx="18" cy="18" r="16" stroke="#E5E7EB" strokeWidth="3" fill="none" />
-              <circle cx="18" cy="18" r="16" stroke="#4CAF50" strokeWidth="3" fill="none" strokeDasharray="100" strokeDashoffset="40" strokeLinecap="round" />
+              <motion.circle
+                cx="18"
+                cy="18"
+                r="16"
+                stroke="#4CAF50"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="100"
+                strokeDashoffset="100"
+                animate={{ strokeDashoffset: 25 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                strokeLinecap="round"
+              />
             </svg>
-            <div className="absolute max-[700px]:bottom-[5px] flex items-center inset-0 flex items-center justify-center font-bold text-[16px] text-[#181818] max-[699px]:text-[14px]">
+            <div className="absolute inset-0 flex items-center justify-center font-bold text-[16px] text-[#181818] max-[699px]:text-[14px]">
               {count3}+
             </div>
           </div>

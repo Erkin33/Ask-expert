@@ -105,17 +105,17 @@ function Card({ item, scrollDir }: { item: any; scrollDir: "up" | "down" }) {
       ref={ref}
       animate={controls}
       initial={{ opacity: 0, y: 50 }}
-      className="group w-full h-auto min-h-[320px] rounded-[20px] bg-[#EBEBEB] py-[40px] px-[30px] flex flex-col gap-[14px] items-start transition-all duration-300 ease-in-out hover:bg-[#181818] hover:shadow-2xl"
+      className="group w-full h-auto min-h-[320px] rounded-[20px] bg-[#EBEBEB] py-[40px] px-[30px] flex flex-col gap-[14px] items-start transition-all duration-300 ease-in-out hover:bg-[#181818] hover:shadow-2xl active:bg-[#181818] active:shadow-2xl"
     >
       <img
         src={item.Imgae}
         alt={item.Head}
         className="transition-transform duration-300 group-hover:scale-105"
       />
-      <h3 className="text-[22px] lg:text-[25px] font-[600] text-[#181818] group-hover:text-white transition-colors duration-300">
+      <h3 className="text-[22px] lg:text-[25px] font-[600] text-[#181818] group-hover:text-white group-active:text-white transition-colors duration-300">
         {item.Head}
       </h3>
-      <p className="text-[15px] lg:text-[16px] font-[400] leading-[148%] text-[#595566] group-hover:text-white transition-colors duration-300">
+      <p className="text-[15px] lg:text-[16px] font-[400] leading-[148%] text-[#595566] group-hover:text-white group-active:text-white transition-colors duration-300">
         {item.Comment}
       </p>
     </motion.div>

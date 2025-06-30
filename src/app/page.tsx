@@ -5,6 +5,9 @@ import AboutTeam from "@/assets/components/About";
 import OurServices from "@/assets/components/services";
 import Processes from "@/assets/components/process";
 import ArtGallery from "@/assets/components/gallary";
+import Counter from "@/assets/components/counter";
+import Members from "@/assets/components/testimonial";
+import CTA from "@/assets/components/CTA";
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -14,6 +17,9 @@ export default function Home() {
       <OurServices/>
       <Processes/>
       <ArtGallery/>
+      <Counter/>
+      <Members/>
+      <CTA/>
     </div>
   );
 }

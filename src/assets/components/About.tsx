@@ -54,7 +54,7 @@ export default function AboutTeam() {
       ref={ref}
       animate={controls}
       initial={{ opacity: 0, y: 50 }}
-      className="w-[1200.02px] max-w-full h-auto gap-[65px] flex justify-between items-center mt-[127px] mb-[174px] mx-auto max-[1150px]:flex-col max-[1150px]:gap-[40px] max-[699px]:gap-[30px]"
+      className="w-[1200.02px] max-[769px]:mt-[50px] max-[769px]:mb-[50px] max-w-full h-auto gap-[65px] flex justify-between items-center mt-[127px] mb-[174px] mx-auto max-[1150px]:flex-col max-[1150px]:gap-[40px] max-[699px]:gap-[30px]"
     >
       {/* Left */}
       <div className="w-[420.02px] max-w-full h-auto gap-[55px] flex flex-col items-center justify-between max-[699px]:px-4">

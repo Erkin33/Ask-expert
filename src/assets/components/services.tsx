@@ -70,7 +70,7 @@ export default function OurServices() {
         </div>
 
         {/* Карточки */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px]">
+        <div className="w-full grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
           {Title.map((item, index) => (
             <Card key={index} item={item} scrollDir={scrollDir} />
           ))}

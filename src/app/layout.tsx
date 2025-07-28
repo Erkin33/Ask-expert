@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/assets/components/header";
 import { Lato } from 'next/font/google'
+import Footer from "@/assets/components/footer";
 const lato = Lato({
   subsets: ['latin'],
   weight: '400'
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

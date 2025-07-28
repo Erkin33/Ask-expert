@@ -8,6 +8,8 @@ import ArtGallery from "@/assets/components/gallary";
 import Counter from "@/assets/components/counter";
 import Members from "@/assets/components/testimonial";
 import CTA from "@/assets/components/CTA";
+import Blog from "@/assets/components/blog";
+import ContactUs from "@/assets/components/contact";
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -20,6 +22,8 @@ export default function Home() {
       <Counter/>
       <Members/>
       <CTA/>
+      <Blog/>
+      <ContactUs/>
     </div>
   );
 }

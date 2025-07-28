@@ -57,7 +57,7 @@ export default function OurServices() {
   }, []);
 
   return (
-    <div className="w-full max-w-[1920px] mx-auto bg-[#F5F5F5] py-[100px] px-[5%]">
+    <div id="services" className="w-full max-w-[1920px] mx-auto bg-[#F5F5F5] py-[100px] px-[5%]">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-[38px] items-center">
         {/* Заголовок */}
         <div className="w-full max-w-[782px] text-center flex flex-col gap-[8px] items-center">

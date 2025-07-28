@@ -1,6 +1,6 @@
 export default function ContactUs() {
   return (
-    <div
+    <div id="contact"
       className="
         w-[1200px] h-[534px] gap-[91px] flex justify-between items-center mx-auto mt-[150px] mb-[100px]
         max-[1440px]:w-[95%] max-[1440px]:gap-[40px]

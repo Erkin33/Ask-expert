@@ -11,10 +11,10 @@ const cabin = Cabin({
 
 const navLinks = [
   { name: "Home", href: "/", alt: "Home", w: 64.89 },
-  { name: "Pages", href: "/pages", alt: "Pages", w: 62.89 },
-  { name: "Services", href: "/services", alt: "Services", w: 81.89 },
-  { name: "Work", href: "/work", alt: "Work", w: 59.89 },
-  { name: "Contact", href: "/contact", alt: "Contact", w: 78.89 },
+  { name: "About", href: "#aboutUs", alt: "AboutUs", w: 62.89 },
+  { name: "Services", href: "#services", alt: "Services", w: 81.89 },
+  { name: "Work", href: "#work", alt: "Work", w: 59.89 },
+  { name: "Contact", href: "#contact", alt: "Contact", w: 78.89 },
 ];
 
 export default function Header() {
@@ -35,10 +35,19 @@ export default function Header() {
           <p>725 Park Ave, New York</p>
         </div>
         <div className="hidden max-[768px]:hidden lg:flex gap-3 items-center">
-          <img src="/Icons/Instagram.svg" alt="" className="w-[17.98px]" />
-          <img src="/Icons/Facebook.svg" alt="" className="w-[20.72px]" />
-          <img src="/Icons/Twitter.svg" alt="" className="w-[19.88px]" />
-          <img src="/Icons/Linked-In.svg" alt="" className="w-[18.05px]" />
+          <a href="#">
+  <img src="/Icons/Instagram.svg" alt="" className="w-[17.98px]" />
+</a>
+<a href="#">
+  <img src="/Icons/Facebook.svg" alt="" className="w-[20.72px]" />
+</a>
+<a href="#">
+  <img src="/Icons/Twitter.svg" alt="" className="w-[19.88px]" />
+</a>
+<a href="#">
+  <img src="/Icons/Linked-In.svg" alt="" className="w-[18.05px]" />
+</a>
+
         </div>
       </div>
 

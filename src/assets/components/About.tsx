@@ -57,7 +57,7 @@ export default function AboutTeam() {
       className="w-[1200.02px] max-[769px]:mt-[50px] max-[769px]:mb-[50px] max-w-full h-auto gap-[65px] flex justify-between items-center mt-[127px] mb-[174px] mx-auto max-[1150px]:flex-col max-[1150px]:gap-[40px] max-[699px]:gap-[30px]"
     >
       {/* Left */}
-      <div className="w-[420.02px] max-w-full h-auto gap-[55px] flex flex-col items-center justify-between max-[699px]:px-4">
+      <div id="aboutUs" className="w-[420.02px] max-w-full h-auto gap-[55px] flex flex-col items-center justify-between max-[699px]:px-4">
         <div className="w-full gap-[18px] flex flex-col items-start justify-between">
           <div className="w-full gap-[22px] flex flex-col items-start justify-between">
             <p className="w-[120px] text-[16px] bg-[#FFCC4A] text-[#181818] font-[400] leading-[148%] tracking-[14.5%] h-[24px] rounded-[20px] gap-[10px] flex items-center justify-center max-[699px]:text-[14px] max-[699px]:w-[100px]">

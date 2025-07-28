@@ -32,7 +32,7 @@ export default function Processes() {
   ]
 
   return (
-    <div className="w-[1,198.62px] max-[850px]:flex-col max-[1030px]:px-[5%] max-[1220px]:w-full  h-[723.21px] max-[1030px]:gap-[50px] gap-[117px] flex justify-between items-center max-[850px]:my-[30px]  my-[150px] mx-auto">
+    <div id='work' className="w-[1,198.62px] max-[850px]:flex-col max-[1030px]:px-[5%] max-[1220px]:w-full  h-[723.21px] max-[1030px]:gap-[50px] gap-[117px] flex justify-between items-center max-[850px]:my-[30px]  my-[150px] mx-auto">
       {/* Left */}
       <div className="w-[507.89px] max-[850px]:order-2 max-[850px]:mt-[30px]  max-[850px]:w-full max-[850px]:mx-auto max-[1140px]:w-[400px] h-[683.21px] gap-[40px] flex flex-col justify-between items-center mb-[auto]">
         <div className="w-[507.89px] max-[850px]:mx-auto max-[1030px]:w-full h-[323px] gap-[16px] flex flex-col items-start justify-between">

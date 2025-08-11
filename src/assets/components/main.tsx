@@ -19,15 +19,13 @@ export default function BannerJSX() {
   return (
     <div className="relative w-full h-[922.73px] max-[1000px]:h-[589px] overflow-hidden">
       {/* Анимированное фоновое изображение с приоритетной загрузкой */}
-      <Image
-        src="/Main/Banner.svg"
-        alt="Banner background"
-        layout="fill"
-        objectFit="cover"
-        priority
-        placeholder="blur"
-        blurDataURL="/Main/Banner-b.svg"
-      />
+      <img
+  src="/Main/Banner.svg"
+  alt="Banner background"
+  className="absolute inset-0 w-full h-full object-cover"
+  loading="eager"
+/>
+
 
       {/* Контентный блок поверх фона */}
       <div

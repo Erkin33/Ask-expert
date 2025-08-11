@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Cabin } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const cabin = Cabin({
   weight: "400",
@@ -20,12 +20,14 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   return (
     <div className="w-full flex flex-col items-center">
       {/* notification block */}
-      <div className="w-full h-[58px] bg-[#181818] flex justify-around items-center
-                      max-[1500px]:justify-between max-[1500px]:px-4">
+      <div className="w-full h-[58px] bg-[#181818] flex justify-around items-center max-[1500px]:justify-between max-[1500px]:px-4">
         <div className="flex gap-2 items-center text-white text-[14px]">
           <img src="/Icons/time.svg" alt="" className="w-[13px] h-[13px]" />
           <p>Monday - Friday 8AM - 9PM</p>
@@ -35,33 +37,20 @@ export default function Header() {
           <p>725 Park Ave, New York</p>
         </div>
         <div className="hidden max-[768px]:hidden lg:flex gap-3 items-center">
-          <a href="#">
-  <img src="/Icons/Instagram.svg" alt="" className="w-[17.98px]" />
-</a>
-<a href="#">
-  <img src="/Icons/Facebook.svg" alt="" className="w-[20.72px]" />
-</a>
-<a href="#">
-  <img src="/Icons/Twitter.svg" alt="" className="w-[19.88px]" />
-</a>
-<a href="#">
-  <img src="/Icons/Linked-In.svg" alt="" className="w-[18.05px]" />
-</a>
-
+          <a href="#"><img src="/Icons/Instagram.svg" alt="" className="w-[17.98px]" /></a>
+          <a href="#"><img src="/Icons/Facebook.svg" alt="" className="w-[20.72px]" /></a>
+          <a href="#"><img src="/Icons/Twitter.svg" alt="" className="w-[19.88px]" /></a>
+          <a href="#"><img src="/Icons/Linked-In.svg" alt="" className="w-[18.05px]" /></a>
         </div>
       </div>
 
       {/* main header */}
-      <div className="w-full h-[139.54px] bg-[#1B1B1BE8] flex items-center justify-around px-4
-                      max-[1500px]:justify-between max-[1500px]:px-6 max-[768px]:py-4 relative">
+      <div className="w-full h-[139.54px] bg-[#1B1B1BE8] flex items-center justify-around px-4 max-[1500px]:justify-between max-[1500px]:px-6 max-[768px]:py-4 relative">
         
         {/* logo */}
         <div className="flex items-center gap-3">
           <img src="/Icons/Logo.svg" alt="" className="w-[29.74px] h-[28.91px]" />
-          <Link
-            href="/"
-            className={`font-[600] text-[30px] text-[#ffffff] ${cabin.className}`}
-          >
+          <Link href="/" className={`font-[600] text-[30px] text-[#ffffff] ${cabin.className}`}>
             AskExperts
           </Link>
         </div>
@@ -69,17 +58,29 @@ export default function Header() {
         {/* burger menu */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden flex flex-col gap-[4px] z-50"
+          className="lg:hidden flex flex-col gap-[4px] z-50 relative w-6 h-5"
         >
-          <div className="w-6 h-[2px] bg-white" />
-          <div className="w-6 h-[2px] bg-white" />
-          <div className="w-6 h-[2px] bg-white" />
+          <span
+            className={`block w-6 h-[2px] bg-white transition-all duration-300 ${
+              menuOpen ? "rotate-45 translate-y-[8px]" : ""
+            }`}
+          />
+          <span
+            className={`block w-6 h-[2px] bg-white transition-all duration-300 ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block w-6 h-[2px] bg-white transition-all duration-300 ${
+              menuOpen ? "-rotate-45 -translate-y-[8px]" : ""
+            }`}
+          />
         </button>
 
         {/* desktop nav */}
         <div className="w-[561.31px] h-[28px] lg:flex justify-between items-center hidden">
           {navLinks.map((link, index) => {
-            const isActive = pathname === link.href;
+            const isActive = mounted && pathname === link.href;
             return (
               <div
                 style={{ width: `${link.w}px` }}
@@ -115,24 +116,28 @@ export default function Header() {
           </div>
         </div>
 
-        {/* mobile menu */}
-        {menuOpen && (
-          <div className="absolute top-[100%] left-0 w-full bg-[#1B1B1B] text-white flex flex-col items-center gap-4 py-6 lg:hidden z-40">
-            {navLinks.map((link, index) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={index}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`text-lg ${isActive ? "text-[#5AB612]" : "text-white"}`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </div>
-        )}
+        {/* mobile menu with animation */}
+        <div
+          className={`
+            absolute left-0 w-full bg-[#1B1B1B] text-white flex flex-col items-center gap-4 py-6 lg:hidden z-40
+            transition-all duration-500 ease-in-out
+            ${menuOpen ? "opacity-100 translate-y-0 top-[100%]" : "opacity-0 -translate-y-5 pointer-events-none top-[90%]"}
+          `}
+        >
+          {navLinks.map((link, index) => {
+            const isActive = mounted && pathname === link.href;
+            return (
+              <Link
+                key={index}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`text-lg ${isActive ? "text-[#5AB612]" : "text-white"}`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ export default function BannerJSX() {
         objectFit="cover"
         priority
         placeholder="blur"
-        blurDataURL="/Main/Banner-blur.svg"
+        blurDataURL="/Main/Banner-b.svg"
       />
 
       {/* Контентный блок поверх фона */}

@@ -10,6 +10,7 @@ import Members from "@/assets/components/testimonial";
 import CTA from "@/assets/components/CTA";
 import Blog from "@/assets/components/blog";
 import ContactUs from "@/assets/components/contact";
+import BackToTop from "@/assets/components/BackToTop";
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -23,6 +24,7 @@ export default function Home() {
       <Members/>
       <CTA/>
       <Blog/>
+      <BackToTop/>
       <ContactUs/>
     </div>
   );

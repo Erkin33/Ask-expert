@@ -6,7 +6,7 @@ export default function Blog() {
       info: "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
       img: "/Members/JM.svg",
       Name: "James Miller",
-      Date: "June 12, 2019"
+      Date: "June 12, 2025"
     },
     {
       banner: "/Gallery/Hacking.svg",
@@ -14,7 +14,7 @@ export default function Blog() {
       info: "New consultants often underestimate the importance of clear contracts and overpromise results. Learn how to avoid these common pitfalls and build long-term client trust.",
       img: "/Members/KS.svg",
       Name: "Sara Brooks",
-      Date: "February 8, 2021"
+      Date: "June 12, 2025"
     }
   ]
 

@@ -78,7 +78,7 @@ export default function Header() {
         </button>
 
         {/* desktop nav */}
-        <div className="w-[561.31px] h-[28px] lg:flex justify-between items-center hidden">
+        <div className="w-[561.31px] max-[1070px]:w-[450px] h-[28px] lg:flex justify-between items-center hidden">
           {navLinks.map((link, index) => {
             const isActive = mounted && pathname === link.href;
             return (

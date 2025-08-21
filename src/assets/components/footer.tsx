@@ -124,7 +124,7 @@ export default function Footer() {
                     focus:outline-none focus:ring-2 focus:ring-white/30
                   "
                 >
-                  <span className="relative z-10">Book an Appointment</span>
+                  <span className="relative z-10 text-[20px] font-[500] sm:text-[18px]">Book</span>
                   <span className="absolute left-0 top-0 h-full w-0 bg-black transition-all duration-500 group-hover:w-1/2" />
                   <span className="absolute right-0 top-0 h-full w-0 bg-black transition-all duration-500 group-hover:w-1/2" />
                 </a>

@@ -81,7 +81,7 @@ export default function ContactUs() {
             <img src="/Contact-us/location.svg" alt="" className="w-[52.33px] h-[52.33px]" />
             <div className="flex flex-col justify-between items-start max-[768px]:items-center">
               <p className="text-[16px] font-[400] leading-[148%] text-[#595566]">Call Today</p>
-              <h2 className="text-[18px] font-[600] leading-[116%] text-[#181818] text-center">
+              <h2 className="text-[18px] font-[600] leading-[116%] text-[#181818] text-center max-[1024px]:text-left">
                 195 Devonshire St Boston
               </h2>
             </div>

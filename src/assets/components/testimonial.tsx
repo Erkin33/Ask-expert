@@ -78,7 +78,7 @@ export default function Members() {
           <div className="w-[30px] lg:w-[43.54px] h-[30px] lg:h-[43.54px]">
             <img src="/Icons/Left.svg" alt="left" />
           </div>
-          <p className="font-[600] text-[16px] text-[#353535]">Prev</p>
+          <p className="font-[600] text-[16px] text-[#353535] max-[500px]:hidden">Prev</p>
         </button>
 
         <AnimatePresence mode="wait">
@@ -103,7 +103,7 @@ export default function Members() {
         </AnimatePresence>
 
         <button onClick={next} className="w-[90px] lg:w-[125px] h-[60px] bg-[#F3F3F3] rounded-[42px] flex justify-around items-center px-2">
-          <p className="font-[600] text-[16px] text-[#353535]">Next</p>
+          <p className="font-[600] text-[16px] text-[#353535] max-[500px]:hidden">Next</p>
           <div className="w-[30px] lg:w-[43.54px] h-[30px] lg:h-[43.54px]">
             <img src="/Icons/Right.svg" alt="right" />
           </div>

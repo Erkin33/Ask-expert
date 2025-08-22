@@ -79,18 +79,19 @@ npm run dev
   <section id="structure" class="card">
     <h2>4) Project Structure</h2>
 <pre><code>Ask-expert/
+├─ documentation/ 
+│  ├─ images/
+│  ├─ index.html
 ├─ public/                   # static assets (images, icons, fonts)
 ├─ src/
 │  ├─ app/                   # App Router pages (or 'pages/' for Pages Router)
 │  │  ├─ layout.(tsx|jsx)
 │  │  ├─ page.(tsx|jsx)
-│  │  └─ ...routes
 │  ├─ ....
 ├─ tailwind.config.(js|ts)
 ├─ postcss.config.js
 ├─ package.json
 └─ README.md</code></pre>
-    <div class="img"><img src="images/04-structure.png" alt="Structure"></div>
   </section>
 
   <section id="edit" class="card">
@@ -125,19 +126,30 @@ export default function ContactUs()</code></pre>
   <section id="tailwind" class="card">
     <h2>6) Tailwind Styling</h2>
     <p>Global config is in <code>tailwind.config.js</code></p>
-<pre><code>// tailwind.config.js (example)
+<pre><code>// tailwind.config.js
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
+  ],
   theme: {
     extend: {
-      colors: {
-        brand: "#22c55e"
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" }
+        }
+      },
+      animation: {
+        marquee: "marquee 25s linear infinite"
       }
     }
   },
   plugins: []
+};
+
 }</code></pre>
-    <div class="img"><img src="images/07-tailwind.png" alt="Tailwind configuration"></div>
   </section>
 
   <section id="update" class="card">
@@ -163,7 +175,6 @@ npm start   # runs the compiled app</code></pre>
       <li>Go to <a href="https://vercel.com" target="_blank" rel="noreferrer">Vercel</a> → New Project → Import Git Repo.</li>
       <li>Framework preset: <strong>Next.js</strong>. Keep defaults and click <em>Deploy</em>.</li>
     </ol>
-    <div class="img"><img src="images/09-vercel.png" alt="Vercel deploy"></div>
   </section>
 
   <section id="faq" class="card">
